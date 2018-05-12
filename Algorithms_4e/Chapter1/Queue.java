@@ -12,6 +12,17 @@ package algs;
 
 
 public class Queue<Item> {
+
+    public Queue(Queue<Item> source) {
+        if(getClass()!=source.getClass()) throw new ClassFormatError(" Not same class!");
+        for(int i=0;i<source.size;i++){
+            Item tmp=source.dequeue();
+            enqueue(tmp);
+            source.enqueue(tmp);
+        }
+    }
+    public Queue(){ /* Empty */}
+    
     
     DNode<Item> last;
     int size;
@@ -80,6 +91,6 @@ public class Queue<Item> {
         System.out.println(queue.dequeue());
         queue.enqueue(888);
         System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
+        assert false;
     }
 }

@@ -17,6 +17,20 @@ public class DoubleNode<Item> implements Iterable<Item>{
     DNode<Item> tail;
     int size;
     
+    public void catenation(DoubleNode<Item> other){
+        if(size==0){
+            head=other.head;
+            tail=other.tail;
+            size=other.size;
+            return;
+        }
+        tail.next=other.head;
+        if(other.size!=0){
+            tail=other.tail;
+            size+=other.size;
+        }
+    }
+    
     public static class DNode<Item>{
         DNode<Item> next;
         DNode<Item> last;

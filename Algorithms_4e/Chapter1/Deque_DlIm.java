@@ -76,6 +76,11 @@ public class Deque_DlIm<Item> implements Iterable<Item>{
         deque.pushRight("Right5");
         System.out.println(deque.popRight());
         System.out.println(deque.popRight());
+        deque.pushRight("Right");
+        deque.pushRight("Right");
+        Iterator<String> it=deque.iterator();
+        while(it.hasNext())
+            System.out.println(it.next());
     }
     
 }

@@ -16,7 +16,9 @@ public class Steque<Item> {
         store=new DoubleNode<>();
     }
     
-    
+    public void catenation(Steque<Item> other){
+        store.catenation(other.store);
+    }
     
     public void enqueue(Item key){
         store.insertAfterTail(key);

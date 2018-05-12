@@ -5,6 +5,7 @@
  */
 package algs;
 import java.util.Arrays;
+import javafx.print.PaperSource;
 
 /**
  *
@@ -13,10 +14,38 @@ import java.util.Arrays;
 public class StaticSETofInts {
     int[] a;
 
-    public StaticSETofInts(int[] inputArray) {
+    public StaticSETofInts(int[] inputArray,boolean sort) {
         a=inputArray.clone();
+        if(sort)
         Arrays.sort(a);
     }
+    
+    public boolean twoDirFind(int target,int [] input){
+        int bottom=0;
+        int top=input.length-1;
+        if(input.length<3){
+            if(input.length<2) throw new IllegalArgumentException("Expect a b array, get"+Arrays.toString(input));
+            return input[0]==target||input[1]==target;
+        }
+        if(input[0]>input[1]||input[input.length-2]<input[input.length-1]) throw new IllegalArgumentException("Not a Bitonic array");
+        int middle=0;
+        while(bottom<=top){
+            middle=(bottom+top)/2;
+            int second=input[middle];
+            if(second==target) return true;
+            int third=input[middle+1];
+            int first=input[middle-1];
+            if(first<second&&second>third) break;
+            else if(second>first){
+                bottom=middle+1;
+            } else{
+                top=middle-1;
+            }
+        }
+        
+        return getIndex(target, 0, middle-1)!=-1||getRevArrayIndex(target, middle+1, input.length-1)!=-1;
+    }
+    
     public int getMinIndex(int key){
         if(a.length==0) return -1;
         int top=a.length-1;
@@ -34,6 +63,35 @@ public class StaticSETofInts {
             }
         }
         return index;
+    }
+    
+    public int getIndex(int key,int bottom,int top){
+        if(a.length==0) return -1;
+        while(bottom<=top){
+            int middle=(bottom+top)/2;
+            if(key>a[middle]){
+                bottom=middle+1;
+            } else if(key<a[middle]){
+                top=middle-1;
+            } else{
+                return middle;
+            }
+        }
+        return -1;
+    }
+    public int getRevArrayIndex(int key,int bottom,int top){
+        if(a.length==0) return -1;
+        while(bottom<=top){
+            int middle=(bottom+top)/2;
+            if(key>a[middle]){
+                top=middle-1;
+            } else if(key<a[middle]){
+                bottom=middle+1;
+            } else{
+                return middle;
+            }
+        }
+        return -1;
     }
     
     
@@ -86,7 +144,7 @@ public class StaticSETofInts {
         Arrays.sort(b);
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
-        StaticSETofInts list=new StaticSETofInts(a);
+        StaticSETofInts list=new StaticSETofInts(a,true);
         //System.out.println(list.howMany(77));
         StaticSETofInts.printEqualElement(a, b);
     }

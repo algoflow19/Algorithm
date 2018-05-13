@@ -14,9 +14,13 @@ import edu.princeton.cs.algs4.Stopwatch;
  */
 public class SelSort extends SortBase{
 
+    public SelSort(Comparable[] a) {
+        this.a=a;
+    }
+    
+    
     @Override
     public void sort(Comparable[] a) {
-        this.a=a;
         int min;
         for(int i=0;i<a.length-1;i++){
             min=i;
@@ -27,11 +31,11 @@ public class SelSort extends SortBase{
     }
     
     public static void main(String[] args) {
-        SelSort sort=new SelSort();
         int N=100000;
         Integer[] a=new Integer[N];
         for(int i=0;i<N;i++)
             a[i]=StdRandom.uniform(100000);
+        SelSort sort=new SelSort(a);
         Stopwatch clock=new Stopwatch();
         sort.sort(a);
         System.out.print(clock.elapsedTime());

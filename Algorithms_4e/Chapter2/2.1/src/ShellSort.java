@@ -35,7 +35,7 @@ public class ShellSort extends SortBase {
             CompareTimes = 0;
         }
     }
-    
+        
     public boolean check(Object[] a){
         Object[] copy=Arrays.copyOf(a, a.length);
         Arrays.sort(a);

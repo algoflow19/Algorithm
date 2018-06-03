@@ -23,6 +23,15 @@ public class InsertSort extends SortBase{
                 exch(j, j-1);
         }
     }
+    public void sort(Comparable[] a,int min,int max) {
+        this.a=a;
+        for(int i=min+1;i<=max;i++){
+            for(int j=i;j>min&&a[j].compareTo(a[j-1])<0;j--)
+                exch(j, j-1);
+        }
+    }
+    
+    
     
     public static void main(String[] args) {
         InsertSort sort=new InsertSort();

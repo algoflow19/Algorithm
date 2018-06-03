@@ -6,15 +6,6 @@
 
 package algs;
 
-import java.util.Random;
-import java.util.Arrays;
-import java.util.List;
-import edu.princeton.cs.algs4.StdStats;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdOut;
-import java.lang.reflect.Array;
-import java.util.Vector;
 /**
  *
  * @author KK

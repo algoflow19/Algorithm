@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.9.10)  13 SEP 2018 09:56
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.9.10)  13 SEP 2018 15:13
 entering extended mode
 **ps2_sol.tex
 ("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\ps2_sol.tex"
@@ -254,11 +254,11 @@ p
 Here is how much of TeX's memory you used:
  2268 strings out of 495354
  27359 string characters out of 3183859
- 88579 words of memory out of 3000000
+ 88558 words of memory out of 3000000
  5409 multiletter control sequences out of 15000+200000
  24849 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,9n,20p,759b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,9n,20p,721b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/CTE
 X/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<D:/CTEX/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D
@@ -270,7 +270,7 @@ iKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/CTEX/MiKTeX/fonts/type1/urw
 iKTeX/fonts/type1/urw/times/utmbi8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/u
 tmr8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/CTEX/MiKTeX/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on ps2_sol.pdf (10 pages, 189577 bytes).
+Output written on ps2_sol.pdf (10 pages, 189531 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

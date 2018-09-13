@@ -1,4 +1,5 @@
-This directory contains the public test cases for the circuit simulation problem.
+This directory contains the public and private test cases for the circuit
+simulation problem. Cases 1-5 are public, and cases 6-10 are private. 
 
 If you are reading this document, you probably want to write a new test. Tests
 1-5 should supply good models. This file documents the file format and the steps

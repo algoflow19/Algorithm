@@ -1,0 +1,278 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.9.10)  13 SEP 2018 09:56
+entering extended mode
+**ps2_sol.tex
+("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\ps2_sol.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+(D:\CTEX\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(D:\CTEX\MiKTeX\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\macros.tex"
+(D:\CTEX\MiKTeX\tex\latex\base\latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(D:\CTEX\MiKTeX\tex\latex\psnfss\times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(D:\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\clrscode3e.sty"
+Package: clrscode3e 
+
+(D:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(D:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\c@codelinenumber=\count88
+\c@indent=\count89
+\digitwidth=\skip43
+\savecode=\box26
+\codeboxwidth=\skip44
+\c@thisindent=\count90
+)
+\toppush=\skip45
+\pointcount=\count91
+\c@problemnum=\count92
+\c@problempartnum=\count93
+\c@exercisenum=\count94
+\c@exercisepartnum=\count95
+\c@totalcaptions=\count96
+\c@totalart=\count97
+\halffigspace=\skip46
+\wholefigspace=\skip47
+\figruleheight=\skip48
+\figgap=\skip49
+\widefigspacewidth=\skip50
+\macfigfill=\skip51
+\bbx=\skip52
+\bby=\skip53
+\savearraycolsep=\skip54
+\c@theorem=\count98
+\c@xample=\count99
+\c@definition=\count100
+\c@handouts=\count101
+)
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(D:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count102
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count103
+\leftroot@=\count104
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count105
+\DOTSCASE@=\count106
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count107
+\c@MaxMatrixCols=\count108
+\dotsspace@=\muskip11
+\c@parentequation=\count109
+\dspbrk@lvl=\count110
+\tag@help=\toks15
+\row@=\count111
+\column@=\count112
+\maxfields@=\count113
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(D:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\ps2_sol.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 165.
+
+
+(D:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(D:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count114
+\scratchdimen=\dimen114
+\scratchbox=\box29
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen115
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 167.
+ (D:\CTEX\MiKTeX\tex\latex\base\ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 172.
+
+(D:\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 205.
+
+<figures/snowflake.pdf, id=1, 266.59601pt x 192.72pt>
+File: figures/snowflake.pdf Graphic file (type pdf)
+
+<use figures/snowflake.pdf>
+Package pdftex.def Info: figures/snowflake.pdf used on input line 209.
+(pdftex.def)             Requested size: 187.89912pt x 135.82938pt.
+ [1
+
+{D:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}} <H:/MIT_Algo
+thrium/Course work/hub/6006/A2/writeup/figures/snowflake.pdf>]
+Overfull \hbox (22.68976pt too wide) in paragraph at lines 248--248
+| [] 
+ []
+
+<figures/snowflake-triangle.pdf, id=16, 184.69pt x 212.795pt>
+File: figures/snowflake-triangle.pdf Graphic file (type pdf)
+
+<use figures/snowflake-triangle.pdf>
+Package pdftex.def Info: figures/snowflake-triangle.pdf used on input line 287.
+
+(pdftex.def)             Requested size: 93.94955pt x 108.24477pt.
+ [2] [3 <H:/MIT_Algothrium/Course work/hub/6006/A2/writeup/figures/snowflake-tr
+iangle.pdf>] [4] [5] [6] [7]
+<figures/xor-ansi.pdf, id=46, 80.3pt x 40.15pt>
+File: figures/xor-ansi.pdf Graphic file (type pdf)
+ <use figures/xor-ansi.pdf>
+Package pdftex.def Info: figures/xor-ansi.pdf used on input line 585.
+(pdftex.def)             Requested size: 80.29979pt x 40.14989pt.
+
+[8 <H:/MIT_Algothrium/Course work/hub/6006/A2/writeup/figures/xor-ansi.pdf>]
+Overfull \hbox (15.04483pt too wide) in paragraph at lines 619--620
+[]\OT1/pcr/m/n/12 python -m cProfile -s time circuit.py < tests/5devadas13.in 
+ []
+
+[9]
+Overfull \hbox (36.64482pt too wide) in paragraph at lines 689--690
+[]\OT1/pcr/m/n/12 TRACE=jsonp python circuit.py < tests/1gate.in > circuit.json
+p 
+ []
+
+[10] ("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\ps2_sol.aux") ) 
+Here is how much of TeX's memory you used:
+ 2268 strings out of 495354
+ 27359 string characters out of 3183859
+ 88579 words of memory out of 3000000
+ 5409 multiletter control sequences out of 15000+200000
+ 24849 words of font info for 59 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 29i,9n,20p,759b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/CTE
+X/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<D:/CTEX/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D
+:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/CTEX/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmss12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/CTEX/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/CTEX/MiKTeX/fonts/type1/urw
+/courier/ucrr8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/CTEX/M
+iKTeX/fonts/type1/urw/times/utmbi8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/u
+tmr8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/CTEX/MiKTeX/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on ps2_sol.pdf (10 pages, 189577 bytes).
+PDF statistics:
+ 108 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+

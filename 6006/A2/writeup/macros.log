@@ -1,0 +1,79 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.9.10)  12 SEP 2018 19:42
+entering extended mode
+**macros.tex
+("H:\MIT_Algothrium\Course work\hub\6006\A2\writeup\macros.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \usepackage{
+                latexsym}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \usepackage{
+                 times,url}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \usepackage{
+                 clrscode3e}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+\toppush=\skip41
+\pointcount=\count79
+\c@problemnum=\count80
+\c@problempartnum=\count81
+\c@exercisenum=\count82
+\c@exercisepartnum=\count83
+\c@totalcaptions=\count84
+\c@totalart=\count85
+\halffigspace=\skip42
+\wholefigspace=\skip43
+\figruleheight=\skip44
+\figgap=\skip45
+\widefigspacewidth=\skip46
+\macfigfill=\skip47
+\bbx=\skip48
+\bby=\skip49
+\savearraycolsep=\skip50
+\c@theorem=\count86
+\c@xample=\count87
+\c@definition=\count88
+\c@handouts=\count89
+)
+! Emergency stop.
+<*> macros.tex
+              
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 213 strings out of 495354
+ 2135 string characters out of 3183859
+ 46397 words of memory out of 3000000
+ 3482 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 9i,0n,12p,201b,14s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

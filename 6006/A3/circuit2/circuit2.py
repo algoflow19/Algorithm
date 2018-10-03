@@ -263,6 +263,8 @@ class RangeIndex(object):
               toBeInserted.updateNodeNum()
           else:
               self.__add__(toBeInserted.right,key)
+              toBeInserted.updateHeight()
+              toBeInserted.updateNodeNum()
               toBeInserted.checkAndFixRightInsert()
               
       elif(key<toBeInserted.key):
@@ -300,10 +302,14 @@ class RangeIndex(object):
             if(currentNode == patient.right):
                   patient.right=currentNode.right or currentNode.left
                   if(patient.right is not None):
-                      patient.right.patient=currentNode.patient
+                      patient.right.patient=patient
                   patient.updateNodeNum()
                   patient.updateHeight()
                   patient.checkAndFixRightDelete()
+                  while(patient.patient is not None):
+                    patient.updateNodeNum()
+                    patient.updateHeight()
+                    patient=patient.patient
             else:
                   patient.left=currentNode.right or currentNode.left
                   if(patient.left is not None):
@@ -311,6 +317,10 @@ class RangeIndex(object):
                   patient.updateNodeNum()
                   patient.updateHeight()
                   patient.checkAndFixLeftDelete()
+                  while(patient.patient is not None):
+                    patient.updateNodeNum()
+                    patient.updateHeight()
+                    patient=patient.patient
           else:
               # find the next larger element,
               next_larger=currentNode.right
@@ -318,6 +328,7 @@ class RangeIndex(object):
                   next_larger=next_larger.left
               next_larger.key,currentNode.key=currentNode.key,next_larger.key
               self.__remove__(next_larger,key)
+              
               
         
   def list(self, first_key, last_key):
@@ -372,49 +383,64 @@ class RangeIndex(object):
     return self.__rank__(self.head.right,key)
 
 
-index=RangeIndex()
-index.add(4)
-index.add(2)
-index.add(1)
-index.add(3)
-index.add(6)
-index.add(5)
-index.add(7)
-index.list(0,7)
-print(index.head.right.nodeNum)
-print(index.head.right.left.nodeNum)
-print(index.head.right.right.nodeNum)
-index.remove(6)
-index.remove(5)
-index.remove(4)
-index.list(0,7)
-index.list(0,7)
-index.count(-88,7)
+#index=RangeIndex()
+#index.add(4)
+#index.add(2)
+#index.add(1)
+#index.add(3)
+#index.add(6)
+#index.add(5)
+#index.add(7)
+#index.list(0,7)
+#print(index.head.right.nodeNum)
+#print(index.head.right.left.nodeNum)
+#print(index.head.right.right.nodeNum)
+#index.remove(6)
+#index.remove(5)
+#index.remove(4)
+#index.list(0,7)
+#index.list(0,7)
+#index.count(-88,7)
+#
+#import random
+#
+#
+#
+#def pBottom(node):
+#  if(node==None): return
+#  
+#  if( nodeNum(node.right)+ nodeNum(node.left)+1!=nodeNum(node)):
+#    raise Exception("Found vol"+str(nodeNum(node))+' '+str(nodeNum(node.right))+' '+str(nodeNum(node.left)))
+#  if(node.right is None and node.left is None):
+##    print(str(node.nodeNum))
+#    return
+#  pBottom(node.right)
+#  pBottom(node.left)
+#
+#index=RangeIndex()
+#addList=[]
+#
+#for i in range(0,100):
+#  toAdd=random.randint(-999999,99999)
+##  print(str(toAdd))
+#  index.add(toAdd)
+#  addList.append(toAdd)
+#
+#pBottom(index.head.right)
+#print(str(index.count(-999999,99999)))
+#for i in range(0,25):
+#  elem=random.choice(addList)
+#  addList.remove(elem)
+#  index.remove(elem)
+#
+#print(str(index.count(-999999,99999)))
+#
+#print(str(len(index.list(-999999,99999))))
+#pBottom(index.head.right)
+#head=index.head.right
+#head.left.nodeNum
+#head.left.right.nodeNum+head.left.left.nodeNum
 
-import random
-
-index=RangeIndex()
-addList=[]
-
-for i in range(0,100):
-  toAdd=random.randint(-999999,99999)
-#  print(str(toAdd))
-  index.add(toAdd)
-  addList.append(toAdd)
-
-print(str(index.count(-999999,99999)))
-for i in range(0,25):
-  elem=random.choice(addList)
-  addList.remove(elem)
-  index.remove(elem)
-print(str(index.count(-999999,99999)))
-
-print(str(len(index.list(-999999,99999))))
-
-head=index.head.right
-
-head.left.nodeNum
-head.left.right.nodeNum+head.left.left.nodeNum
 
 class TracedRangeIndex(RangeIndex):
   """Augments RangeIndex to build a trace for the visualizer."""

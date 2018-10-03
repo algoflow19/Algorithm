@@ -1,0 +1,62 @@
+3-1.
+(a)4
+(b)3
+(c)3
+(d)3
+
+(e)6
+(f)5
+(g)6
+(h)5
+
+(i)4
+(j)3
+(k)2
+(l)3
+(m)4
+(n)4
+(o)
+1 T
+2 T
+3 T
+4 T
+5 T
+6 F
+(p)3
+
+(q)2
+(r)3
+(s)8
+(t)8
+
+(u)
+Prove:
+	We first prove that LCA must return a commonan cestor of elements in list(tree,l,h).
+	Because any practical tree has a certain height, so as LCA runs, it visited deeper node, so at least it
+	will reach (node==NIL) finally, if it hasn't hit (l <= node.key and h >=node.key) to stop. we know that
+	LCA must stop somewhere. We could figure out that for line 2-6 of LCA, it never lose any node in 
+	list(tree,l,h), so LCA will stop and return a commonan cestor.
+	Next, we want to prove that the commonan cestor returned by LCA is the last one. We assume that
+	the commonan cestor returned by LCA (marked as 'G')is not the last one, so the last commonan cestor
+	must in the subtrees of G, however if the last node be any chlid of G or their chlids, we know that G
+	is in list(tree,l,h), so it must lose some node in list(tree,l,h), it can't be a commonan cestor.
+	We now know that the counter assumtion is unreasonable, so G must the last commonan cestor.
+
+3-2
+(a) _compute_crossings
+(b) Too many, cProfile failed to print it out, more than 999999999.
+(c)
+1.True
+2.True
+3.False
+4.False
+5.True
+
+(d)1
+(e)2
+(f)4
+(g)3
+(h)2
+(i)2
+(g) _compute_crossings
+(h) Too many, cProfile failed to print it out, more than 999999999.

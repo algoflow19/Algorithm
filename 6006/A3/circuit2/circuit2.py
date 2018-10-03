@@ -288,13 +288,9 @@ class RangeIndex(object):
   def __remove__(self,currentNode,key):
       if(key>currentNode.key):
           self.__remove__(currentNode.right,key)
-          currentNode.updateHeight()
-          currentNode.updateNodeNum()
           currentNode.checkAndFixRightDelete()
       elif(key<currentNode.key):
           self.__remove__(currentNode.left,key)
-          currentNode.updateHeight()
-          currentNode.updateNodeNum()
           currentNode.checkAndFixLeftDelete()
       else:
           if(currentNode.right is None or currentNode.left is None):
@@ -303,23 +299,15 @@ class RangeIndex(object):
                   patient.right=currentNode.right or currentNode.left
                   if(patient.right is not None):
                       patient.right.patient=patient
-                  patient.updateNodeNum()
-                  patient.updateHeight()
                   patient.checkAndFixRightDelete()
                   while(patient.patient is not None):
-                    patient.updateNodeNum()
-                    patient.updateHeight()
                     patient=patient.patient
             else:
                   patient.left=currentNode.right or currentNode.left
                   if(patient.left is not None):
                       patient.left.patient=patient
-                  patient.updateNodeNum()
-                  patient.updateHeight()
                   patient.checkAndFixLeftDelete()
                   while(patient.patient is not None):
-                    patient.updateNodeNum()
-                    patient.updateHeight()
                     patient=patient.patient
           else:
               # find the next larger element,

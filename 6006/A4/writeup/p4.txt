@@ -1,0 +1,13 @@
+4-1
+(a)3
+(b)4
+(c)7
+(d)
+	Yes, it will work, and it surely avoids wasting half of the memory, but we don't do it for several reasons. Theoretically, if we n elements to the hash table, the we pay O(m+k,m+2*k,m+3*k... ,n) time to complete that. It's easy to figure out that is a equal-diffenece sequence, so we pay O(n^2) time to complete the 'insert n elements' operation and that is bad because we pay O(n) for each operation on average. In practical, the first problem is that how to figure out the value of k and the second problem is how we shrink the hash table, if we first insert a lot of elements and then do 'insert k elements and remove k elements' operation for lots of times, the time performance will be really bad compared to the '2x' method.
+
+4-2
+(a)1
+(b)3
+
+4-3
+(d)

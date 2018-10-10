@@ -201,6 +201,9 @@ class BigNumTest(unittest.TestCase):
                      BigNum.h('4AA51420'))
     self.assertEqual(BigNum.h('41').powmod(BigNum.h('BECF'), modulo),
                      BigNum.h('C73043C1'))
+if __name__ == '__main__':
+  unittest.main()
+
 
 if __name__ == '__main__':
   unittest.main()

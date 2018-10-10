@@ -1,0 +1,409 @@
+%
+% 6.006 problem set 6
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{trees}
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer:}
+}
+
+\newcommand{\collaborators}{ \textbf{Collaborators:}
+%%% COLLABORATORS START %%%
+None.
+%%% COLLABORATORS END %%%
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+3
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+3
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+
+\newcommand{\answerIc}{ \answer
+%%% PROBLEM 1(c) ANSWER START %%%
+1
+%%% PROBLEM 1(c) ANSWER END %%%
+}
+
+\newcommand{\answerId}{ \answer
+%%% PROBLEM 1(d) ANSWER START %%%
+4
+%%% PROBLEM 1(d) ANSWER END %%%
+}
+\newcommand{\answerIe}{ \answer
+%%% PROBLEM 1(e) ANSWER START %%%
+3
+%%% PROBLEM 1(e) ANSWER END %%%
+}
+\newcommand{\answerIf}{ \answer
+%%% PROBLEM 1(f) ANSWER START %%%
+2
+%%% PROBLEM 1(f) ANSWER END %%%
+}
+\newcommand{\answerIg}{ \answer
+%%% PROBLEM 1(g) ANSWER START %%%
+3
+%%% PROBLEM 1(g) ANSWER END %%%
+}
+\newcommand{\answerIh}{ \answer
+%%% PROBLEM 1(h) ANSWER START %%%
+3
+%%% PROBLEM 1(h) ANSWER END %%%
+}
+\newcommand{\answerIi}{ \answer
+%%% PROBLEM 1(i) ANSWER START %%%
+4
+%%% PROBLEM 1(i) ANSWER END %%%
+}
+\newcommand{\answerIj}{ \answer
+%%% PROBLEM 1(j) ANSWER START %%%
+2
+%%% PROBLEM 1(j) ANSWER END %%%
+}
+\newcommand{\answerIk}{ \answer
+%%% PROBLEM 1(k) ANSWER START %%%
+4
+%%% PROBLEM 1(k) ANSWER END %%%
+}
+\newcommand{\answerIl}{ \answer
+%%% PROBLEM 1(l) ANSWER START %%%
+8
+%%% PROBLEM 1(l) ANSWER END %%%
+}
+\newcommand{\answerIm}{ \answer
+%%% PROBLEM 1(m) ANSWER START %%%
+6
+%%% PROBLEM 1(m) ANSWER END %%%
+}
+\newcommand{\answerIn}{ \answer
+%%% PROBLEM 1(n) ANSWER START %%%
+6
+%%% PROBLEM 1(n) ANSWER END %%%
+}
+\newcommand{\answerIo}{ \answer
+%%% PROBLEM 1(o) ANSWER START %%%
+7
+%%% PROBLEM 1(o) ANSWER END %%%
+}
+\newcommand{\answerIp}{ \answer
+%%% PROBLEM 1(p) ANSWER START %%%
+\begin{codebox}
+\Procname{$\proc{KTHROOT}(A,K,N)$}
+\li $Size \gets (N+K-1) \div K$
+\li $Result \gets \proc{Zero}(Size)$
+\li \For $i \gets Size-1$ \Downto $0$ \label{li:exp-for1}
+\li 	\Then $Result[i] \gets 1$
+\li		$Product \gets 1$
+\li 	$tmp \gets Result$
+\li     \For $j \gets 0$ \To $N-1$ \label{li:exp-for2} \Then
+\li        \If $K[j]==1$ \Then
+\li 			$Product = Product \times tmp$ \End
+\li			$tmp \gets tmp \times tmp$     \End
+
+		\label{li:exp-mulmod2}
+\li        \If $\proc{CMP}(Product,A,N) == GREATER$ 
+\li 		\Then $Result[i] \gets 0$ \End \End
+          \End \label{li:exp-mulmod1}       
+      \End
+\li \Return $Result$
+\end{codebox}
+\quad This sloution is similar to the official solution but not quite. Using line 1 and line 2, we first figure out the possible bit size of the result, Then we just detemind if a bit in the result is '1', if the result is too bigger by line 7 to line 11, if it is, then the bit should be '0'(line 12), we continue to detemind each bit, and finally we get the correct answer.
+There are two loop which cause the inner loop code(line 7~10) could run $\Theta(n^2)$ times, since there are all times operation, we know it provide a $\Theta(n^{\log_2 3})$ complexity, so we know the algothrim run in $\Theta(N^{2 + \log_2 3})$.
+%%% PROBLEM 1(p) ANSWER END %%%
+}
+
+\newcommand{\answerIIa}{ \answer
+%%% PROBLEM 2(a) ANSWER START %%%
+7
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+3
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+\newcommand{\answerIIc}{ \answer
+%%% PROBLEM 2(c) ANSWER START %%%
+9
+%%% PROBLEM 2(c) ANSWER END %%%
+}
+\newcommand{\answerIId}{ \answer
+%%% PROBLEM 2(d) ANSWER START %%%
+1 2 6
+%%% PROBLEM 2(d) ANSWER END %%%
+}
+\newcommand{\answerIIe}{ \answer
+%%% PROBLEM 2(e) ANSWER START %%%
+1 4 5
+%%% PROBLEM 2(e) ANSWER END %%%
+}
+\newcommand{\answerIIf}{ \answer
+%%% PROBLEM 2(f) ANSWER START %%%
+2 3
+%%% PROBLEM 2(f) ANSWER END %%%
+}
+
+\newcommand{\answerIIIa}{ \answer 
+%%% PROBLEM 3(a) ANSWER START %%%
+fast\_mul
+%%% PROBLEM 3(a) ANSWER END %%%
+}
+\newcommand{\answerIIIb}{ \answer
+%%% PROBLEM 3(b) ANSWER START %%%
+93496
+%%% PROBLEM 3(b) ANSWER END %%%
+}
+\newcommand{\answerIIIc}{ \answer
+%%% PROBLEM 3(c) ANSWER START %%%
+4
+%%% PROBLEM 3(c) ANSWER END %%%
+}
+\newcommand{\answerIIId}{ \answer
+%%% PROBLEM 3(d) ANSWER START %%%
+4
+%%% PROBLEM 3(d) ANSWER END %%%
+}
+\newcommand{\answerIIIe}{ \answer
+%%% PROBLEM 3(e) ANSWER START %%%
+1 2 3
+%%% PROBLEM 3(e) ANSWER END %%%
+}
+\newcommand{\answerIIIf}{ \answer
+%%% PROBLEM 3(f) ANSWER START %%%
+1
+%%% PROBLEM 3(f) ANSWER END %%%
+}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% Fill these in!
+\newcommand{\theproblemsetnum}{6}
+\newcommand{\releasedate}{October 24, 2011}
+\newcommand{\partaduedate}{Monday, October 31}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Problem Set \theproblemsetnum}{\releasedate}
+
+\textbf{Both theory and programming questions} are due {\bf \partaduedate} at
+{\bf 11:59PM}.
+%
+Please download the .zip archive for this problem set, and refer to the
+\texttt{README.txt} file for instructions on preparing your solutions.
+
+We will provide the solutions to the problem set 10 hours after the problem set
+is due. You will have to read the solutions, and write a brief \textbf{grading
+explanation} to help your grader understand your write-up. You will need to
+submit the grading explanation by \textbf{Thursday, November 3rd, 11:59PM}. Your
+grade will be based on both your solutions and the grading explanation.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \points{30} \textbf{I Can Haz Moar Frendz?}
+
+Answer:
+
+\quad We preform a variety of breadth first search. We start the search at point S, and we stop after k steps. The mainly different things here is that we do not prevent to visit a node. we start from s, in the first step, we update all neighbors to \proc{ER}($u_0$,$u_i$) where ($u_0$,$u_i$) $\in E$ and next update each two-unit far node to \proc{ER}($u_0$,$u_j$) $ \times $ \proc{ER}($u_j$,$u_i$), if \proc{ER}($u_0$,$u_j$) $ \times $ \proc{ER}($u_j$,$u_i$) $>$ \proc{ER}($u_0$,$u_i$) or $u_i$ hasn't been visited, then repeat the process. Finally after k steps, we will get the right answer.
+\newpage
+
+\problem \points{18} \textbf{RSA Public-Key Encryption}
+
+Answer:
+
+
+
+\newpage
+
+\problem \points{42} \textbf{Image Decryption}
+
+Your manager wants to show off the power of the Knight's Shield chip by
+decrypting a live video stream directly using the RSA public-key crypto-system.
+RSA is quite resource-intensive, so most systems only use it to encrypt the key
+of a faster algorithm. Decrypting live video would be an impressive technical
+feat!
+
+Unfortunately, the performance of the KS chip on RSA decryption doesn't come
+even close to what's needed for streaming video. The hardware engineers said the
+chip definitely has enough computing power, and blamed the problem on the
+RSA implementation. Your new manager has heard about your algorithmic chops, and
+has high hopes that you'll get the project back on track. The software engineers
+suggested that you benchmark the software using images because, after all, video
+is just a sequence of frames.
+
+The code is in the \texttt{rsa} directory in the zip file for this problem set.
+
+\begin{problemparts}
+\problempart \points{2} Run the code under the python profiler with the command
+below, and identify the method inside \texttt{bignum.py} that is most suitable
+for optimization. Look at the methods that take up the most CPU time, and
+choose the first method whose running time isn't proportional to the size of its
+output.
+
+\texttt{python -m cProfile -s time rsa.py < tests/1verdict\_32.in}
+
+\textit{Warning:} the command above can take 1-10 minutes to complete, and
+bring the CPU usage to 100\% on one of your cores. Plan accordingly. If
+you have installed PyPy successfully, you should replace \texttt{python} with
+\texttt{pypy} in the command above for a 2-10x speed improvement. 
+
+What is the name of the method with the highest CPU usage?
+\answerIIIa
+
+\problempart \points{1} How many times is the method called?
+\answerIIIb
+
+\problempart \points{1} The troublesome method is implementing a familiar
+arithmetic operation. What is the tightest asymptotic bound for the worst-case
+running time of the method that contains the bottleneck? Express your answer in
+terms of $N$, the number of digits in the input numbers.
+\begin{enumerate}
+  \item $\Theta(N)$.
+  \item $\Theta(N \log n)$
+  \item $\Theta(N \log^2 n)$
+  \item $\Theta(N^{\log_{2} 3})$
+  \item $\Theta(N^2)$
+  \item $\Theta(N^{\log_{2} 7})$
+  \item $\Theta(N^3)$
+\end{enumerate}
+\answerIIIc
+
+\problempart \points{1} What is the tightest asymptotic bound for the worst-case
+running time of division? Express your answer in terms of $N$, the number of
+digits in the input numbers.
+\begin{enumerate}
+  \item $\Theta(N)$.
+  \item $\Theta(N \log n)$
+  \item $\Theta(N \log^2 n)$
+  \item $\Theta(N^{\log_{2} 3})$
+  \item $\Theta(N^2)$
+  \item $\Theta(N^{\log_{2} 7})$
+  \item $\Theta(N^3)$
+\end{enumerate}
+\answerIIId
+
+\end{problemparts}
+
+We have implemented a visualizer for your image decryption output, to help you
+debug your code. The visualizer will also come in handy for answering the
+question below. To use the visualizer, first produce a trace.
+
+\texttt{TRACE=jsonp python rsa.py < tests/1verdict\_32.in > trace.jsonp}
+
+On Windows, use the following command instead.
+
+\texttt{rsa\_jsonp.bat < tests/1verdict\_32.in > trace.jsonp}
+
+Then use Google Chrome to open
+\texttt{visualizer/bin/visualizer.html}
+
+\begin{problemparts}
+\problempart \points{6} The test cases that we supply highlight the problems of
+RSA that we discussed above. Which of the following is true? (True / False)
+\begin{enumerate}
+  \item Test \texttt{1verdict\_32} shows that RSA has fixed points.
+  \item Test \texttt{1verdict\_32} shows that RSA is deterministic.
+  \item Test \texttt{2logo\_32} shows that RSA has fixed points.
+  \item Test \texttt{2logo\_32} shows that RSA is deterministic.
+  \item Test \texttt{5future\_1024} shows that RSA has fixed points.
+  \item Test \texttt{5future\_1024} shows that RSA is deterministic.
+\end{enumerate}
+\answerIIIe
+
+\problempart \points{1} Read the code in \texttt{rsa.py}. Given a decrypted
+image of $R \times C$ pixels ($R$ rows, $C$ columns), where all the pixels
+are white (all the image data bytes are 255), how many times will
+\texttt{powmod} be called during the decryption operation in
+\texttt{decrypt\_image}?
+\begin{enumerate}
+  \item $\Theta(1)$
+  \item $\Theta(R C)$
+  \item $\Theta(\frac{RC}{N})$
+  \item $\Theta(\frac{RN}{C})$
+  \item $\Theta(\frac{CN}{R})$
+\end{enumerate}
+\answerIIIf
+
+\problempart \points{30} The multiplication and division operations in
+\texttt{big\_num.py} are implemented using asymptotically efficient algorithms
+that we have discussed in class. However, the sizes of the numbers involved in
+RSA for typical key sizes aren't suitable for complex algorithms with high
+constant factors. Add new methods to \texttt{BigNum} implementing multiplication
+and division using straight-forward algorithms with low constant factors, and
+modify the main multiplication and division methods to use the simple algorithms
+if at least one of the inputs has 64 digits (bytes) or less. Please note that
+you are not allowed to import any additional Python libraries and our test will
+check this.
+\end{problemparts}
+
+The KS software testing team has put together a few tests to help you check your
+code's correctness and speed. \texttt{big\_num\_test.py} contains unit tests
+with small inputs for all \texttt{BigNum} public methods.
+\texttt{rsa\_test.py} runs the image decryption code on the test cases in the
+\texttt{tests/} directory.
+
+You can use the following command to run all the image decryption tests.
+
+\texttt{python rsa\_test.py}
+
+To work on a single test case, run the simulator on the test case with the
+following command.
+
+\texttt{python rsa.py < tests/1verdict\_32.in > out}
+
+Then compare your output with the correct output for the test case.
+
+\texttt{diff out tests/1verdict\_32.gold}
+
+For Windows, use \texttt{fc} to compare files.
+
+\texttt{fc out tests/1verdict\_32.gold}
+
+While debugging your code, you should open a new Terminal window (Command Prompt
+in Windows), and set the \texttt{KS\_DEBUG} environment variable (\texttt{export
+KS\_DEBUG=true}; on Windows, use \texttt{set KS\_DEBUG=true}) to use a slower
+version of our code that has more consistency checks.
+
+When your code passes all tests, and runs reasonably fast (the tests should
+complete in less than 90 seconds on any reasonably recent computer using PyPy,
+or less than 600 seconds when using CPython), upload your modified
+\texttt{big\_num.py} to the course submission site. Our automated grading code
+will use our versions of \texttt{test\_rsa.py}, \texttt{rsa.py} and
+\texttt{ks\_primitives.py} / \texttt{ks\_primitives\_unchecked.py}, so please do
+not modify these files.
+
+\end{problems}
+\end{document}

@@ -238,14 +238,78 @@ grade will be based on both your solutions and the grading explanation.
 Answer:
 
 \quad We preform a variety of breadth first search. We start the search at point S, and we stop after k steps. The mainly different things here is that we do not prevent to visit a node. we start from s, in the first step, we update all neighbors to \proc{ER}($u_0$,$u_i$) where ($u_0$,$u_i$) $\in E$ and next update each two-unit far node to \proc{ER}($u_0$,$u_j$) $ \times $ \proc{ER}($u_j$,$u_i$), if \proc{ER}($u_0$,$u_j$) $ \times $ \proc{ER}($u_j$,$u_i$) $>$ \proc{ER}($u_0$,$u_i$) or $u_i$ hasn't been visited, then repeat the process. Finally after k steps, we will get the right answer.
+
+\begin{codebox}
+\Procname{$\proc{MAX-EDGERANKS}(s,G,K)$}
+\li INITIALIZZE-SINGLE-SOURCE(G,s)
+\li $front \gets [s]$
+\li $tmp \gets [$ $]$
+\li \For $i \gets 1$ \To $K$ \Do
+\li \For $current$ In $front$ \Do
+\li \For $next$ In $current.adj$ \Do
+\li \If $d[next] > d[current]\times w(current,next)$ \Do 
+\li $d[next] \gets d[current]\times w(current,next)$
+\li \If $next$ not in $tmp$ \Do
+\li $ADD(tmp,next)$ \End \End \End \End 
+\li $front \gets tmp$
+\li $tmp\gets[$ $]$\End
+\li \Return $d$
+\end{codebox}
+
+Analysis:
+
+INITIALIZZE-SINGLE-SOURCE cost $O(V)$, the loop in line 4 execute K times.
+The inner loop(line 7~10) execute $|E|$ times at most, because there at most $|E|$ edges in the graph, so we know the complexity is $O(V+kE)$.
 \newpage
 
-\problem \points{18} \textbf{RSA Public-Key Encryption}
+\problem \points{30} \textbf{RenBook Competitor}
 
 Answer:
 
+(a)
+We keep using DFS method on all vertices in the whole graph built by the problem(Libraries as Nodes, dependencies as directional edgs) without repating visiting, and after each vertex is finished, memory the finish time of DFS on each node then we know that the earier the node finished, the laster the libraries is installed, and that is the installation order.
+
+(b)
+If we perform the algothrim in (a) and just produce the installation order ingore if a library had been installed or not, we will fail to meet the complexity. To fix that, we need to figure out how we can get the right answer without 'dive into' the installed libraries.
+
+ 
+\begin{codebox}
+\Procname{$\proc{DFS-VISITED}(n,G,F,P,s,end)$}
+\li \If \proc{ISINSTALLED}(n) OR $n$ IN $F$\Do
+\li \Return FALSE \End
+\li \If $n$ IN $P$ OR $n==end$\Do
+\li \Return TURE
+\End
+\li $later \gets$ FALSE
+\li \For $neighbor$ in $n.adj$ \Do
+\li \If \proc{DFS-VISITED}(n,G,F,P,s,end) $==$TURE
+\li $later \gets$ TURE \End
+\li \If $later$ \Do
+\li	 \proc{ADD}(P,n)
+\li \Return TURE
+\li \Else
+\li  \proc{ADD}(F,n)
+\li \Return FALSE
+\End
+\end{codebox}
 
 
+\begin{codebox}
+\Procname{$\proc{INSTALL-ORDER-PRODUCER}(t,G)$} 
+\li INITIALIZZE-SINGLE-SOURCE(G,s)
+\li $front \gets [s]$
+\li $tmp \gets [$ $]$
+\li \For $i \gets 1$ \To $K$ \Do
+\li \For $current$ In $front$ \Do
+\li \For $next$ In $current.adj$ \Do
+\li \If $d[next] > d[current]\times w(current,next)$ \Do 
+\li $d[next] \gets d[current]\times w(current,next)$
+\li \If $next$ not in $tmp$ \Do
+\li $ADD(tmp,next)$ \End \End \End \End 
+\li $front \gets tmp$
+\li $tmp\gets[$ $]$\End
+\li \Return $d$
+\end{codebox}
 \newpage
 
 \problem \points{42} \textbf{Image Decryption}

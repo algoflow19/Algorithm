@@ -210,7 +210,6 @@ class PathFinder(object):
         """
         if(source == destination):
           return ([source],0)
-        visitedList={} # using id(node) as key,0 as content.
         visited_num=-1
         toDoNodes=PriorityQueue()
         for node in nodes:

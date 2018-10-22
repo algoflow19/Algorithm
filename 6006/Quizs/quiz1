@@ -1,0 +1,21 @@
+
+P2.
+(a) 2 6 4 7 8 3 5 1
+(b) theta(n^2)
+(c) theta(log(n))
+p3.
+(a)F
+(b)T
+(c)F
+(d)T
+(e)F
+(f)F
+(g)F
+(h)F
+(i)T
+p4:
+(a) O(log(m)+log(n))
+(b) Yes,it will. Every time we see that the algothrim, we mainly consider that if the peak could 'escape' from the bound of last time matrix. From the algothrim we know that the bound must all less than the peak internal point, so the peak can't escape, we know the algothrim is right.
+p5:
+(a)There are C(n k) nodes at the bottom of the decision tree, so we know there is at least log(C(n k)) levels, using the approximation given by the question, we get the answer.
+(b)The algothrim is we random choose half of current city and mix it, then do experment on a volunteer, we know the recurrence relation is T(n,k)=T(n/2,k) or T(n,k)=2*T(n/2,k/2), so we know that there is at most log(n) levels for the recurrence tree, and there is at most k nodes on each level, so we know the complexity is O(k*lg(n))  

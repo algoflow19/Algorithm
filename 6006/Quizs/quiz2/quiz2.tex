@@ -1,0 +1,85 @@
+%
+% 6.006 quiz 2
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\theproblemsetnum}{7}
+\newcommand{\releasedate}{November 22, 2011}
+\newcommand{\partaduedate}{Tuesday, December 6}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+
+\begin{document}
+
+\title{$Quiz 2$}
+Quiz 2:\\
+1.
+
+2.
+
+(a)T (b)F (c)F (d)F (e)F (f)T (g)T (h)F (i)F (j)F (k)T (l)F (m)F\\
+(n)T\\
+3.
+(a)ABDFH\\
+(b)ABCDEGFH
+(c)\\
+T:(A,B) (B,C) (C,D) (D,E) (E,G) (G,F) (F,H)\\
+B:(C,A) (D,B) (F,D) (H,G)\\
+F:\\
+C:\\
+(d)\\
+T:(A,B) (B,C) (C,D) (D,E) (E,G) (D,F) (F,H)\\
+B: (C,A)\\
+F: (B,D)\\
+C: (H,G)(F,G) \\
+(e) ABDCFEGH\\
+4.
+
+(a) $X_{i+1}=X_i-\frac{{X_i}^4-A}{4{X_i}^3}$\\
+(b)
+
+As Hint, $B^3=A^{\frac{3}{4}}-3A^{\frac{2}{4}}\alpha+3A^{\frac{1}{4}}\alpha^2-\alpha^3$, so if A is big enough big $3A^{\frac{2}{4}}\alpha$ may cause the result incorrect.\\
+(c)
+
+$C\leq A^{\frac{3}{4}}$ is logically equal to $C^4\leq A^3$. We check the latter equation and we get the answer.\\
+(d)
+
+We know if $C=\floor{A^{\frac{3}{4}}}$, there must have $C<=\floor{A^{\frac{3}{4}}}$ and $C+1>\floor{A^{\frac{3}{4}}}$. So we check if $C^4\leq A^3$ and $(C+1)^4>A^3$ is true then we know $C=\floor{A^{\frac{3}{4}}}$ and so on reverse.
+
+(e)
+
+We use Newton's method to compute the $A^{\frac{3}{4}}$, the function we use is $f(x)=A^3-x^4$, so the formula for the more accurate estimate $x_{i+1}$ is $x_{i+1}=x_i-\frac{A^3}{4x_i^3}+\frac{x_i}{4}$, we then do iteration on $x_i$ and when the $x_i$ doesn't change, we get the correct answer.\\
+5.
+
+We build the G' as follow:\\
+Copy $G$ k times and we get graph $G_1, G_2, G_3...G_k$, then for each graph from $G_1$ to $G_{k-1}(G_i)$, build directed edge from $G_i$'s $v_i$ to $G_{i+1}$'s $v_i$ with weight zero, and we use the whole graph as $G'$. We note $G_1$'s $v_1$ as s, $G_k$'s $v_k$ as t, input $(s,t,G')$ to the serive and we get the answer. \\
+6.\\
+(a)
+$(s,u_1,u_3,u_2,t)$, cost \$20.\\
+(b)
+$(s,u_1,u_3,u_2,u_1,u_4,t,u_5)$\\
+(c)
+
+In General, we use there layer to represent the state of our oil tank, and a small trick there is that you can't move from 'NO GAS' node to another 'NO GAS' node expect it is t, because if we do so, we will die in 'NO GAS' node. 
+We first remove all edges that from 'NO GAS' to 'NO GAS' in the origin graph, and the get the new graph named L1. We then build L2 as that we copy all vertrics from L1, then change every edges in L1 to point to the corresponding vertex in L2, then we copy vertices of 'Gas' type from L2 to L3 and copy edges bewteen L1 and L2 to L2 and L3 to corresponding postion, finally every vertics in L2 and L3 can pay the 'Gas Refill' amount to back to the correspoding node in L1. We then run the Dirktras from s to L1,L2,L3's t and get the answer. We know that build L1,L2 and L3 cost $O(V+E)$, running Dirktras cost $O(VlogV+E)$, so the total running time is $O(VlogV+E)$.
+
+// \textbf{Need Be More careful boy! You should }
+\end{document}

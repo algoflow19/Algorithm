@@ -1,0 +1,149 @@
+%
+% 6.006 quiz 2
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\newcommand{\theproblemsetnum}{7}
+\newcommand{\releasedate}{November 22, 2011}
+\newcommand{\partaduedate}{Tuesday, December 6}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+
+\begin{document}
+
+\title{$Quiz 2$}
+Practice For Quiz 2\\
+1.
+
+(a) Suppose that a bridge not in a BFS tree, so if we remove it, we know the edge in BFS tree edges must connect the whole graph nodes, however, as the defintion of the bridge, removing it would break the graph into two pieces. We meet the confilect so the assuming must wrong, we know every bridge must appear in every BFS tree of the graph.\\
+(b) Let's say that e is (u,v), we choose u as the start node of running BFS, we explore all edges expect (u,v), if we reach the node v, then we know that e is a bridge, otherwise, it doesn't. Since the graph is connected, we know $|E| \geq |V|$,so the $O(E+V)=O(E)$. \\
+(c) Run BFS on a random node R, We know that the possible bridge must in the tree, so there are $|V|-1$ edge at most. We know the part(b) algothrim on each edge, then we know which edges are bridges.\\
+2.
+
+We need to find the total number of paths in $G$ from $s$ to $t$. We first doing a modified topologicy sort and then get the answer.
+\begin{codebox}
+\Procname{$\proc{ALGOTHRIM-P5}(G=(V,E),s,v)$}
+\li \proc{Initalize}()
+\li \For $v$ in $V$ \Do
+\li $count[v] \gets 0$ \End
+\li $count[s] \gets 1$
+\li 
+\end{codebox}
+\newpage
+
+3.
+
+We run a modified version of BFS, which also memory the number of shorest paths to each node on the path.
+\begin{codebox}
+\Procname{$\proc{PATHCOUNT-BFS}(G,s,t)$}
+\li \For $v$ in $V$ \Do
+\li $count[v]=0$ 
+\li $level[v]=-1$\End
+\li $count[s]=1$
+\li $level[s]=0$
+\li $i=1$
+\li $frontiers=[s]$
+\li 
+\li \While $frontiers\neq$ $[$ $]$ \Do
+\li $next=$ $[$ $]$
+\li \For $v$ $in$ $frontiers$ \Do 
+\li \For $(v,u)$ $in$ $v.adj$ \Do 
+\li \If $level[v]==-1$\Do
+\li $next=next+[v]$ 
+\li $level[v]=i$ \End
+\li \If $level[v]==i$ \Do
+\li $count[v]=count[v]+count[u]$
+\li  \End \End \End 
+\li $i=i+1$ 
+\li $frontier=next$\End  
+\li \Return count[t]
+\end{codebox}
+\newpage
+4.
+
+\begin{codebox}
+\Procname{$\proc{DEGREEZEROSORT}(G=\{V,E\})$}
+\li \For $u$ $in$ $V$ \Do
+\li $inDegrees=0$ \End
+\li \For $(u,v)$ $in$ $E$ \Do
+\li $inDegrees[v]=inDegrees[v]+1$ \End
+\li $frontier=[$ $]$
+\li \For $u$ $in$ $V$ \Do
+\li \If $inDegrees[v]==0$ \Do 
+\li $frontier=frontier+[v]$ \End \End
+\li $result=\proc{COPY}(frontier)$
+\li \While $frontier\neq [$ $]$ \Do
+\li $next=[$ $]$
+\li \For $u$ $in$ $frontier$ \Do 
+\li \For $(b,v)$ $in$ $u.adj$ \Do 
+\li $inDegrees[v]=inDegrees[v]-1$
+\li \If $inDegrees[v]==0$ \Do
+\li $next=next+[v]$ \End \End \End 
+\li $frontier=next$
+\li $result=result+next$\End
+\li \Return result
+
+\end{codebox}
+If G has cycles, this algothrim will terminate and leave the cycly nodes which $inDegress$ aren't zero, returning the topological ordering on the vertices that it has found.\\
+5.
+
+Use BFS to find three shortest paths in the undirected graph: the path from s to t, the
+path from s to u, and the path from u to t. Then compare α · d[s, t] to d[s, u] + d[u, t] to figure out
+whether it’s worth it to take a detour through u.\\
+6.
+
+Modify the Relax operation, and then run the normal Dijkstra's.
+\begin{codebox}
+\Procname{$\proc{NEW-RELAX}(u,v,w)$}
+\li $value=\proc{MAX}(d[u],w)$
+\li \If $value < d[v]$ \Do
+\li $d[v]=value$ \End
+\end{codebox} \newpage
+
+\begin{flushleft}
+7.\\
+Miss. \\
+8.
+\end{flushleft}
+
+We generate two graphs that one contains only red edges and the other contains only blue edges from the original graph. For each vertex in red graph, connect a edge from it to its corresponding vertex in blue graph with weight five. We should be careful that $s_r$ or $s_b$ may not be connected to any edge, in that case, we only need run Dijkstra on the other start point, and return $\proc{MIN}(d[t_r],d[t_b])$. OtherWise, run Dijkstra on both $s_r$ and $s_b$, then return the min $d[t]$.\\
+This algothrim First select out the red and blue edges cost O(E), then cost O(V+E) for copying vertices and rebuild adj matrixes. After that, check the start point and it cost at most O(1), and we run Dijkstra 
+\begin{flushleft}
+9.\\
+Miss.. \\
+\end{flushleft}
+10.
+
+We model this problem as a directed graph with weighted edges as following:\\First, we creat n nodes that represent n days as a sequence, then link the front one to the behind one with a directed edge that weights zero. For each bid$(s_i,e_i,\$_i)$, draw a directed edge from $v_{si}$ to $v_{ei}$ with weight $-\$_i$ and spocal mark to indiect that . We could figure out that the graph is DAG, so first do topological sort then relax each edge. We finally follow the parent pointers and store each edge marked then we get the answer.
+
+11.
+
+We first modify the relax operation for Dijkstra to find all shorest paths bewteen two nodes. 
+\begin{codebox}
+\Procname{$\proc{RELAX}(u,v,w)$}
+\li $value=d[u]+w(u,v)$
+\li \If $value==d[v]$ \Do
+\li $p[v]=p[v]+[u]$ \End
+\li \Else \If $value<d[v]$ \Do
+\li $p[v]=[u]$ \End
+\end{codebox}
+Now, Dijkstra can find out all shorest pahts for us. Let's run Dirkstra start from s, then run BFS on t follows the parent pointers and mark all vertices on the way 'touched'. We then run Dirkstra start from u, and run BFS on v, if we meet any nodes that are 'touched' we know there exists nodes  which is part of some shortest path from u to v and also a part of some shortest path from s to t. We run twice BFS cost $O(V+E)$ and twice Dijkstra cost $O(E+VlogV)$, so the total running time is $O(E+VlogV)$.
+\end{document}
